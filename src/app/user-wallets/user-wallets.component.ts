@@ -13,7 +13,7 @@ export class UserWalletsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   dataSource = new MatTableDataSource<UserWallet>([]);
-  isLoading: boolean = true;
+  isLoading: boolean;
   displayedColumns: string[] = [
     'token',
     'mnemonic',
