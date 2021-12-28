@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const COMPONENTS = [DrawerComponent];
 
@@ -23,6 +24,7 @@ const COMPONENTS = [DrawerComponent];
     MatListModule,
     MatIconModule,
     RouterModule,
+    FlexLayoutModule,
   ],
   exports: [...COMPONENTS],
   providers: [
