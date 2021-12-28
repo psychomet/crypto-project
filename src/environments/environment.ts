@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.channelead.ir',
+  apiUrl: 'https://api.farazcrs.ir',
 };
 
 /*

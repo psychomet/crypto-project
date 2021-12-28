@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.channelead.ir',
+  apiUrl: 'https://api.farazcrs.ir',
 };

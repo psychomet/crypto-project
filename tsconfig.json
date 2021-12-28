@@ -20,9 +20,14 @@
     "module": "es2020",
     "lib": ["es2020", "dom"],
     "strictNullChecks": false,
+    "noImplicitAny": false,
     "paths": {
       "@env/*": ["src/environments/*"],
-      "@core/models/*": ["src/app/core/models/*"]
+      "@core/models/*": ["src/app/core/models/*"],
+      "@core/components": ["src/app/core/components"],
+      "@core/guards": ["src/app/core/guards"],
+      "@core/providers": ["src/app/core/providers"],
+      "@shared/components/*": ["src/app/shared/components/*"]
     }
   },
   "angularCompilerOptions": {
