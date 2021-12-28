@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppInitService } from './app-init.service';
 import { CoreModule } from './core/core.module';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 export function initializeApp(appInitService: AppInitService) {
   return (): Promise<any> => {
@@ -28,6 +29,10 @@ export function initializeApp(appInitService: AppInitService) {
       useFactory: initializeApp,
       deps: [AppInitService],
       multi: true,
+    },
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
     },
   ],
   bootstrap: [AppComponent],
