@@ -3,6 +3,8 @@ import { UserWalletsService } from './user-wallets.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { UserWallet } from './user-wallet';
+import { StateService } from '@core/providers';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-user-wallets',
@@ -16,21 +18,31 @@ export class UserWalletsComponent implements OnInit, AfterViewInit {
   isLoading: boolean;
   displayedColumns: string[] = [
     'token',
-    'mnemonic',
-    'master_prv',
-    'master_pub',
     'address',
-    'user_uuid',
     'status',
     'created_at',
     'amount',
     'symbol',
-    'call_back_url',
   ];
 
-  constructor(private userWallets: UserWalletsService) {}
+  constructor(
+    private userWallets: UserWalletsService,
+    private stateService: StateService
+  ) {}
 
   ngOnInit(): void {
+    this.stateService
+      .select((state) => state.me)
+      .subscribe((me) => {
+        this.userWallets
+          .getList(me!.uuid)
+          .pipe(tap(() => (this.isLoading = false)))
+          .subscribe((res: any) => {
+            console.log('res', res);
+            this.dataSource.data = res.data;
+            this.dataSource.paginator = this.paginator;
+          });
+      });
     // this.store.pipe(select(getUser)).subscribe((user) => {
     //   this.userWallets.getList(user!.uuid).pipe(tap(() => this.isLoading = false)).subscribe((res) => {
     //     this.dataSource.data = res.data;

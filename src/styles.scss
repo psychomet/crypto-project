@@ -40,6 +40,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -54,12 +55,22 @@ body {
   top: calc(50% - 10px);
   left: calc(50% - 10px);
 }
+
 .container-offset-sm {
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
 table {
+  //width: 100%;
+  //overflow-x: auto;
+}
+
+.d-block {
+  display: block;
+}
+
+.mat-table {
   width: 100%;
   overflow-x: auto;
 }

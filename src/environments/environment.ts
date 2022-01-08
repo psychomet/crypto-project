@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.farazcrs.ir',
+  apiUrl: 'https://pay.vittcoin.com',
 };
 
 /*
