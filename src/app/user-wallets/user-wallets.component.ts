@@ -38,7 +38,6 @@ export class UserWalletsComponent implements OnInit, AfterViewInit {
           .getList(me!.uuid)
           .pipe(tap(() => (this.isLoading = false)))
           .subscribe((res: any) => {
-            console.log('res', res);
             this.dataSource.data = res.data;
             this.dataSource.paginator = this.paginator;
           });
